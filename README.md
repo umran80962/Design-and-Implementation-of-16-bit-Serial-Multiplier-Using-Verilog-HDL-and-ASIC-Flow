@@ -1,4 +1,4 @@
-16-bit Serial Multiplier using Verilog HDL and ASIC Flow
+     16-bit Serial Multiplier using Verilog HDL and ASIC Flow
 
 This project implements a 16×16 serial multiplier using the shift-and-add method. The design was written in Verilog, simulated in Vivado, and then taken through ASIC tools (Genus and Innovus) for synthesis and layout. The goal was to build a compact multiplier that trades speed for lower hardware cost.
 
