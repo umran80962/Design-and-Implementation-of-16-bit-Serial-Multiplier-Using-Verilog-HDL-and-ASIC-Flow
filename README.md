@@ -61,3 +61,28 @@ module serial_multiplier16bit (
     end
 
 endmodule
+module tb;
+    reg clk = 0, rst = 1;
+    reg [15:0] A = 16'd25, B = 16'd13;
+    wire [31:0] product;
+
+    serial_multiplier16bit dut(clk, rst, A, B, product);
+
+    always #5 clk = ~clk;
+
+    initial begin
+        #10 rst = 0;
+        #400 $display("Product = %d", product);
+        $finish;
+    end
+endmodule
+read_netlist netlist.v
+floorplan
+place_opt
+cts
+route_opt
+write_gds chip.gds
+/src       → Verilog files
+/sim       → Testbench, waves
+/netlist   → Genus output
+/layout    → Innovus results (DEF, GDS)
