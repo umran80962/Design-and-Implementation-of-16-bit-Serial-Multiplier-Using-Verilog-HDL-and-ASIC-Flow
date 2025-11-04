@@ -75,20 +75,30 @@ After verification, synthesis was carried out using Cadence Genus tool. The gene
 )
 
 5.1 Synthesis Report Summary:
+
+
 <img width="1140" height="503" alt="image" src="https://github.com/user-attachments/assets/ada252b5-dc73-41d9-8e45-6833b29c87db" />
 
 5.2 Gate-Level Area Report
+
+
 <img width="627" height="814" alt="Screenshot 2025-11-04 225653" src="https://github.com/user-attachments/assets/24ee4d69-8965-44de-b7a1-4d16ce577bfa" />
 
 5.3 Power Report:
+
+
 <img width="895" height="433" alt="image" src="https://github.com/user-attachments/assets/f1c574da-3531-4341-b69f-203473e95873" />
 
 5.4 Timing Report:
+
+
 <img width="979" height="287" alt="image" src="https://github.com/user-attachments/assets/6f95bbca-10fa-4957-a713-2d041af11a1a" />
 
 6. Layout (Cadence Innovus)
 
 Final routed chip layout was generated with no DRC or LVS violations.
+
+
 (<img width="836" height="875" alt="image" src="https://github.com/user-attachments/assets/3a34b70b-e08d-43b1-89be-291c0c65c89b" />
 )
 
@@ -109,11 +119,3 @@ The 16-bit serial multiplier was successfully designed and verified using Verilo
 11. https://www.realdigital.org/doc/6dae6583570fd816d1d675b93578203d
 12. Mohamed Asan Basiri M, Samaresh Chandra Nayak, and Noor Mahammad, “Mul- tiplication acceleration through quarter precision Wallace tree multiplier”, IEEE SPIN Conference, pp. 502–505, Feb. 2014.
 13. Sjalander M and Larsson-Edefors P, “High-Speed and Low-Power Multipliers Using the Baugh-Wooley Algorithm and HPM Reduction Tree”, IEEE ICECS, pp. 33–36, 2008.
-
-
-
-
-
-
-
-(final product screenshot here)
