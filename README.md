@@ -1,4 +1,4 @@
-# Design-and-Implementation-of-16-bit-Serial-Multiplier-Using-Verilog-HDL-and-ASIC-Flow
+<img width="831" height="905" alt="image" src="https://github.com/user-attachments/assets/727f8e84-a856-4925-801f-85eec0e6e3ae" /># Design-and-Implementation-of-16-bit-Serial-Multiplier-Using-Verilog-HDL-and-ASIC-Flow
 Design and Implementation of 16-bit Serial Multiplier Using Verilog HDL and ASIC Flow
 16-bit Serial Multiplier using Verilog HDL and ASIC Flow
 
@@ -58,7 +58,8 @@ After 16 cycles, output holds the final 32-bit result.
 4. Implementation and Results
 4.1 RTL Block Diagram
 
-(block diagram image here)
+(<img width="831" height="905" alt="image" src="https://github.com/user-attachments/assets/88f9f2f9-a385-4496-92ff-9ea4bc95bb55" />
+)
 
 4.2 Simulation Waveform
 
