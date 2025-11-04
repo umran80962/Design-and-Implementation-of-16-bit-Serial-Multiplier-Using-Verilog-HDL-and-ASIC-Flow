@@ -73,3 +73,25 @@ After 16 cycles, output holds the final 32-bit result.
 After verification, synthesis was carried out using Cadence Genus tool. The generated netlist and report are summarized below.
 <img width="875" height="640" alt="Screenshot 2025-11-04 223617" src="https://github.com/user-attachments/assets/36f2e2ff-f37f-4a79-bbff-6638914e180f" />
 )
+
+5.1 Synthesis Report Summary:
+(<img width="1140" height="503" alt="image" src="https://github.com/user-attachments/assets/ada252b5-dc73-41d9-8e45-6833b29c87db" />
+)
+
+Module: Serial_multiplier16bit
+
+Cell count: 351
+
+Total area: ~2801 units (from standard cell library report)
+
+
+
+
+
+
+
+
+
+
+
+(final product screenshot here)
