@@ -1,104 +1,141 @@
- 16-bit Serial Multiplier using Verilog HDL and ASIC Flow
+4×4 Systolic Array Accelerator: RTL to GDSII
 
-This project implements a 16×16 serial multiplier using the shift-and-add method. The design was written in Verilog, simulated in Vivado, and then taken through ASIC tools (Genus and Innovus) for synthesis and layout. The goal was to build a compact multiplier that trades speed for lower hardware cost.
+This project implements a 4×4 systolic array accelerator for matrix-multiplication, written in Verilog HDL and taken through a full ASIC flow (RTL → Simulation → Synthesis → Layout) using the open-source OpenLane flow and the SkyWater 130 nm PDK. It targets high-throughput hardware for CNN and scientific computing applications.
 
 Abstract
 
-This work presents a 16-bit serial multiplier designed in Verilog HDL. It uses the shift-and-add approach, where one bit is processed per clock cycle. The design was functionally verified in Xilinx Vivado and then synthesized and placed-and-routed using Cadence Genus and Innovus. The final output was a clean GDSII layout ready for fabrication. The focus was area efficiency while keeping correct behavior and stable timing.
+We present a hardware accelerator that uses a 4×4 grid of MAC units (16 processing elements) arranged in a systolic fashion. The design is parameterised for scalability, and we demonstrate the full digital flow (RTL → testbench → synthesis → placement & routing → GDSII output). The goal is to show how a structured array with data-flow reuse can deliver high throughput with efficient use of hardware.
 
 1. Introduction
 
-Multiplication is a core arithmetic function in processors and DSP systems. Serial multipliers offer a compact hardware solution by handling one bit at a time, unlike parallel multipliers that use more hardware for speed.
-This project develops a 16-bit serial multiplier and walks through RTL, simulation, synthesis, and physical design stages.
+Systolic arrays are a key architectural choice for matrix-multiplication, convolution engines, and ML accelerators. Instead of processing one multiply-accumulate (MAC) at a time, a 4×4 systolic array performs 16 MACs in parallel per cycle (after pipeline warm-up). This project builds such a 4×4 array, verifies it at RTL, and takes it through an ASIC flow with placement & routing and timing closure.
 
 2. Design Methodology
 
-Steps followed:
+The flow followed:
 
-RTL coding and testbench design in Verilog
+Write parameterised Verilog for MAC unit and systolic array topology
 
-Simulation and waveform check in Vivado
+Develop a comprehensive testbench (multiple input/test cases) and simulate using Icarus Verilog + GTKWave
 
-Synthesis in Cadence Genus
+Perform logic synthesis using Yosys (via OpenLane) targeting the SkyWater 130 nm process
 
-Place-and-route in Cadence Innovus
+Floorplan, place & route, clock tree synthesis, timing-signoff using the OpenLane/OPENROAD flow
 
-GDSII export for chip fabrication
+Generate GDSII layout ready for fabrication
 
-3. Working Principle
+3. Architecture
+Design Hierarchy
 
-The multiplier performs 16-bit × 16-bit multiplication over 16 cycles using the shift-and-add method.
+Processing Element (PE): A MAC unit with acc += a × b, with valid/ready handshake
 
-Inputs
+Array Top-Level: 4 rows × 4 columns of PEs
 
-Serial_multin1 → Multiplicand (A)
+Dataflow
 
-Serial_multin2 → Multiplier (B)
+Matrix A data flows horizontally (left → right)
 
-clk, rst
+Matrix B data flows vertically (top → down)
 
-Output
+Each PE accumulates partial sums locally
 
-Serial_multout → 32-bit product
+Pipeline
 
-Operation flow
+Initial latency to fill the array (~4-7 cycles)
 
-A counter tracks which bit is being processed.
+Steady state: one output per cycle for each of the 16 results
 
-The multiplier bit is checked.
-
-If bit = 1, the multiplicand is added to the partial sum.
-
-Partial results are shifted and accumulated.
-
-After 16 cycles, output holds the final 32-bit result.
-
-4. Implementation and Results
+Key Specifications
+Parameter	Value
+Array Size	4 × 4
+Input Width	8 bits
+Accumulator Width	32 bits
+MACs per Cycle	16
+Throughput	16 MAC operations / clock (steady state)
+4. Implementation & Results
 4.1 RTL Block Diagram
 
-(<img width="831" height="905" alt="Screenshot 2025-11-04 223038" src="https://github.com/user-attachments/assets/8f142d9e-3495-48da-976f-aeaf04884e87" />
-)
+(insert block-diagram image here)
 
-4.2 Simulation Waveform
+4.2 Simulation Waveforms
 
-(<img width="940" height="655" alt="image" src="https://github.com/user-attachments/assets/b70ca1dd-f542-4fc4-b191-140917627931" />
-)
+(insert waveform screenshot here)
 
-4.3 Vivado Output
+4.3 Synthesis & Layout
 
-(<img width="933" height="622" alt="image" src="https://github.com/user-attachments/assets/3cced3e8-3a00-4ff1-a957-d7f7888007c8" />
-)
+Target technology: SkyWater 130 nm
 
-5. Synthesis Results (Cadence Genus)
-5.1 Summary
+Post-route area, timing, power metrics:
 
-Module: Serial_multiplier16bit
+Total area ~ 2810.20 µm²
 
-Cell count: 351
+Maximum operating frequency ~ 176 MHz (typical corner)
 
-Total area: ~2801 units (from standard cell library report)
+Total power ~ 1.37 mW (post-layout)
+These numbers demonstrate timing closure and realistic hardware metrics for a 4×4 systolic array.
 
-5.2 Key Cells Used
+5. Getting Started
+Prerequisites
 
-Adders, AND gates, and AOI structures mainly used for accumulation logic
+Icarus Verilog (for RTL simulation)
 
-5.3 Power Report (Summary)
+GTKWave (waveform viewer)
 
-Total power ~1.96e-04 W
+OpenLane / OpenROAD (ASIC flow)
 
-5.4 Timing Report
+SkyWater 130 nm PDK
 
-Setup slack met
+Running the Flow
+# Clone the repo
+git clone https://github.com/Vedevil/Systolic-MAC-Array-for-CNN-Acceleration.git
+cd Systolic-MAC-Array-for-CNN-Acceleration
 
-Clean timing at target frequency
+# RTL Simulation
+cd tb
+iverilog -o tb.out ../rtl/mac_pe.v ../rtl/systolic_top.v tb_systolic.v
+vvp tb.out
+gtkwave tb_systolic_4x4.vcd
 
-6. Layout (Cadence Innovus)
+# ASIC Flow (via OpenLane)
+cd openlane
+make mount
+./flow.tcl -design systolic_array
 
-Final routed chip layout was generated with no DRC or LVS violations.
-(layout image here)
+6. Technical Specifications
 
-7. Conclusion
+Parameterised architecture supports larger sizes (e.g., 8×8, 16×16)
 
-The 16-bit serial multiplier was successfully built, verified, and implemented up to GDSII. It achieved area-efficient multiplication with correct timing and clean fabrication-ready layout. This shows the full flow from Verilog RTL to physical chip design.
+Handshake protocol (valid/ready) avoids deadlock and ensures back-pressure handling
 
-8. References
+Full verification: identity matrices, zero matrices, max-value matrices, random matrices
+
+Overflow protection: 32-bit accumulator handles 8-bit inputs without overflow
+
+7. Future Enhancements
+
+Extend to larger array sizes (8×8, 16×16)
+
+Move to more advanced process nodes (28 nm, 14 nm)
+
+Introduce clock gating for power savings in unused elements
+
+Pipeline the MAC operations further to boost clock speed
+
+Enhance memory interface (AXI-Stream) or support mixed-precision arithmetic (INT4/INT8/FP16)
+
+8. Contributing
+
+Contributions are welcome. If you’d like to contribute:
+
+Fork the repository
+
+Create a feature branch (e.g., git checkout -b feature/enhancement)
+
+Commit your changes with descriptive message
+
+Push to your fork and open a Pull Request
+
+9. License
+
+This project is released under the MIT License
+. You’re free to use, modify, and distribute the work under its terms
