@@ -1,5 +1,3 @@
-<img width="831" height="905" alt="image" src="https://github.com/user-attachments/assets/727f8e84-a856-4925-801f-85eec0e6e3ae" /># Design-and-Implementation-of-16-bit-Serial-Multiplier-Using-Verilog-HDL-and-ASIC-Flow
-Design and Implementation of 16-bit Serial Multiplier Using Verilog HDL and ASIC Flow
 16-bit Serial Multiplier using Verilog HDL and ASIC Flow
 
 This project implements a 16×16 serial multiplier using the shift-and-add method. The design was written in Verilog, simulated in Vivado, and then taken through ASIC tools (Genus and Innovus) for synthesis and layout. The goal was to build a compact multiplier that trades speed for lower hardware cost.
@@ -58,16 +56,18 @@ After 16 cycles, output holds the final 32-bit result.
 4. Implementation and Results
 4.1 RTL Block Diagram
 
-(<img width="831" height="905" alt="image" src="https://github.com/user-attachments/assets/88f9f2f9-a385-4496-92ff-9ea4bc95bb55" />
+(<img width="831" height="905" alt="Screenshot 2025-11-04 223038" src="https://github.com/user-attachments/assets/8f142d9e-3495-48da-976f-aeaf04884e87" />
 )
 
 4.2 Simulation Waveform
 
-(simulation waveform image here)
+(<img width="940" height="655" alt="image" src="https://github.com/user-attachments/assets/b70ca1dd-f542-4fc4-b191-140917627931" />
+)
 
 4.3 Vivado Output
 
-(final product screenshot here)
+(<img width="933" height="622" alt="image" src="https://github.com/user-attachments/assets/3cced3e8-3a00-4ff1-a957-d7f7888007c8" />
+)
 
 5. Synthesis Results (Cadence Genus)
 5.1 Summary
