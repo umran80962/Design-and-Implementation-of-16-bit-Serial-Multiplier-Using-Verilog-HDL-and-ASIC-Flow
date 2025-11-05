@@ -92,16 +92,16 @@ The 16-bit serial multiplier was successfully designed and verified using Verilo
 <h2><b>References</b></h2>
 
 (List of references same as provided)
-Mohamed Asan Basiri M and Noor Mahammad, “Configurable folded IIR filter design”, IEEE Transactions on Circuits and Systems II, vol. 62, no. 12, pp. 1144–1148, 2015.
-A. Ahlander and Bertil Svensson, “Floating point calculations in bit-serial SIMD computers”, Fourth Swedish Workshop on Computer Systems Architecture, pp. 1–11, 1992.
-Sadeghi, Mohsen, Mahya Zahedi, and Maaruf Ali, “The Cascade Carry Array Mul- tiplier – A Novel Structure of Digital Unsigned Multipliers for Low-Power Con- sumption and Ultra-Fast Applications”, AETiC, vol. 3, no. 3, pp. 19–27, 2019.
+1. Mohamed Asan Basiri M and Noor Mahammad, “Configurable folded IIR filter design”, IEEE Transactions on Circuits and Systems II, vol. 62, no. 12, pp. 1144–1148, 2015.
+2. A. Ahlander and Bertil Svensson, “Floating point calculations in bit-serial SIMD computers”, Fourth Swedish Workshop on Computer Systems Architecture, pp. 1–11, 1992.
+3. Sadeghi, Mohsen, Mahya Zahedi, and Maaruf Ali, “The Cascade Carry Array Multiplier – A Novel Structure of Digital Unsigned Multipliers for Low-Power Consumption and Ultra-Fast Applications”, AETiC, vol. 3, no. 3, pp. 19–27, 2019.
 4. C. S. Wallace, “A suggestion for a fast multiplier”, IEEE Transactions on Electronic Computers, vol. EC-13, no. 1, pp. 14–17, Feb. 1964.
 5. Carl Hamacher, Zvonko Vranesic, Safwat Zaky, and Naraig Manjikian, “Computer Organization and Embedded Systems”, McGraw Hill Publications, 6th Edition, 2002.
 6. Mohamed Asan Basiri M and SK Noor Mahammad, “Memory based multiplier design in custom and FPGA implementation”, Advances in Intelligent Informatics, Springer, pp. 253–265, 2015.
 7. Shuli Gao, Dhamin Al-Khalili, J. M. Pierre Langlois, and Noureddine Chabini, “Efficient Realization of BCD Multipliers Using FPGAs”, IJRC, vol. 2017, no. 2410408, pp. 1–12, 2017.
-8. Parthibaraj Anguraj and Thiruvenkadam Krishnan, “Design and implementation of modified BCD digit multiplier for digit-by-digit decimal multiplier”, Analog In- tegrated Circuits and Signal Processing, Springer, vol. 107, pp. 683–694, 2021.
+8. Parthibaraj Anguraj and Thiruvenkadam Krishnan, “Design and implementation of modified BCD digit multiplier for digit-by-digit decimal multiplier”, Analog Integrated Circuits and Signal Processing, Springer, vol. 107, pp. 683–694, 2021.
 9. Guardia and Carlos Eduardo Minchola, “Implementation of a fully pipelined BCD multiplier in FPGA”, VIII Southern Conference on Programmable Logic, pp. 1–6, 2012.
 10. Z. T. Sworna, M. U. I. Haque, and D. M. Anisuzzaman, “High-Speed and Area Efficient LUT-based BCD Multiplier Design”, IEEE WIECON-ECE, pp. 1–4, 2018.
 11. https://www.realdigital.org/doc/6dae6583570fd816d1d675b93578203d
-12. Mohamed Asan Basiri M, Samaresh Chandra Nayak, and Noor Mahammad, “Mul- tiplication acceleration through quarter precision Wallace tree multiplier”, IEEE SPIN Conference, pp. 502–505, Feb. 2014.
+12. Mohamed Asan Basiri M, Samaresh Chandra Nayak, and Noor Mahammad, “Multiplication acceleration through quarter precision Wallace tree multiplier”, IEEE SPIN Conference, pp. 502–505, Feb. 2014.
 13. Sjalander M and Larsson-Edefors P, “High-Speed and Low-Power Multipliers Using the Baugh-Wooley Algorithm and HPM Reduction Tree”, IEEE ICECS, pp. 33–36, 2008.
