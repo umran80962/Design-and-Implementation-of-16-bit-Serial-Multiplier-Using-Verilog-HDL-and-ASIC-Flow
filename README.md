@@ -90,6 +90,13 @@ Final routed chip layout was generated with no DRC or LVS violations.
 
 The 16-bit serial multiplier was successfully designed and verified using Verilog HDL. The design was synthesized and implemented in the ASIC flow, generating a clean layout with no DRC or LVS violations. The results confirm the area-efficient operation of the serial multiplier with correct functionality and acceptable timing performance. This work demonstrates the complete digital design flow from RTL to GDSII.
 
+## Academic Context
+
+*Course:* VLSI System Design Practice (EC-307)  
+*Institution:* IIITDM Kurnool  
+*Academic Year:* 2025–2026  
+*Faculty:* Dr. P. Ranga Babu
+
 <h2><b>References</b></h2>
 
 
@@ -107,8 +114,3 @@ The 16-bit serial multiplier was successfully designed and verified using Verilo
 12. Mohamed Asan Basiri M, Samaresh Chandra Nayak, and Noor Mahammad, “Multiplication acceleration through quarter precision Wallace tree multiplier”, IEEE SPIN Conference, pp. 502–505, Feb. 2014.
 13. Sjalander M and Larsson-Edefors P, “High-Speed and Low-Power Multipliers Using the Baugh-Wooley Algorithm and HPM Reduction Tree”, IEEE ICECS, pp. 33–36, 2008.
 
-🧭 Academic Context
-Course: VLSI System Design Practice (EC-307)
-Institution: IIITDM Kurnool
-Academic Year: 2025–2026
-Faculty: Dr. P. Ranga Babu
