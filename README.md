@@ -106,3 +106,9 @@ The 16-bit serial multiplier was successfully designed and verified using Verilo
 11. https://www.realdigital.org/doc/6dae6583570fd816d1d675b93578203d
 12. Mohamed Asan Basiri M, Samaresh Chandra Nayak, and Noor Mahammad, “Multiplication acceleration through quarter precision Wallace tree multiplier”, IEEE SPIN Conference, pp. 502–505, Feb. 2014.
 13. Sjalander M and Larsson-Edefors P, “High-Speed and Low-Power Multipliers Using the Baugh-Wooley Algorithm and HPM Reduction Tree”, IEEE ICECS, pp. 33–36, 2008.
+
+🧭 Academic Context
+Course: VLSI System Design Practice (EC-307)
+Institution: IIITDM Kurnool
+Academic Year: 2025–2026
+Faculty: Dr. P. Ranga Babu
