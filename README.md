@@ -37,7 +37,7 @@ The multiplier performs 16-bit × 16-bit multiplication over 16 cycles using the
 <h3><b>Operation flow</b></h3>
 
 1. A 4-bit counter increments with each clock pulse to track the current bit of the multiplication.
-2. The multiplier (Serial multin2) is right-shifted by the counter value to extract the active bit.
+2. The multiplier (Serial multin2) is right-shifted by the counter value to extract the active bit.(This means each clock cycle brings the next bit of the multiplier to the least-significant bit position, so we can read it one bit at a time.)
 3. If the current bit (LSB) is 1, the multiplicand (Serial multin1) is added to the partial sum.
 4. A partial product is generated and left-shifted by the counter value for proper alignment.
 5. Each partial product is added to the accumulated sum (Parproduct sum) every clock cycle.
