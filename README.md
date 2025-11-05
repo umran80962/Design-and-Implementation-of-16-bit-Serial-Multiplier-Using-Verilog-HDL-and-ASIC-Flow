@@ -36,12 +36,12 @@ The multiplier performs 16-bit × 16-bit multiplication over 16 cycles using the
 
 <h3><b>Operation flow</b></h3>
 
-1. A counter tracks which bit is being processed.  
-2. The multiplier bit is checked.  
-3. If bit = 1, the multiplicand is added to the partial sum.  
-4. Partial results are shifted and accumulated.  
-5. After 16 cycles, output holds the final 32-bit result.  
-
+1. A 4-bit counter increments with each clock pulse to track the current bit of the multiplication.
+2. The multiplier (Serial multin2) is right-shifted by the counter value to extract the active bit.
+3. If the current bit (LSB) is 1, the multiplicand (Serial multin1) is added to the partial sum.
+4. A partial product is generated and left-shifted by the counter value for proper alignment.
+5. Each partial product is added to the accumulated sum (Parproduct sum) every clock cycle.
+6. After 16 clock cycles, the complete 32-bit product is available at Serial multout.
 <h2><b>Implementation and Results</b></h2>
 
 <h3><b>4.1 RTL Block Diagram</b></h3>
