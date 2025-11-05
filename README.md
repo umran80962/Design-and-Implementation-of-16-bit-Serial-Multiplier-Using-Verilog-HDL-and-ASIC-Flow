@@ -9,61 +9,6 @@ This work presents a 16-bit serial multiplier designed in Verilog HDL. It uses t
 <h2><b>Introduction</b></h2>
 
 Multiplication is a core arithmetic function in processors and DSP systems. Serial multipliers offer a compact hardware solution by handling one bit at a time, unlike parallel multipliers that use more hardware for speed. This project develops a 16-bit serial multiplier and walks through RTL, simulation, synthesis, and physical design stages.
-// SHIFT-AND-ADD MULTIPLICATION THEORY
-// -------------------------------------------------------
-// This method performs multiplication by processing
-// one bit of the multiplier at a time.
-//
-// For a 16-bit multiplication:
-// - Multiplicand = A (16 bits)
-// - Multiplier   = B (16 bits)
-// - Final Result = 32-bit product
-//
-// OPERATION PRINCIPLE
-// -------------------------------------------------------
-// 1. Check the Least Significant Bit (LSB) of multiplier (B)
-// 2. If LSB = 1, add the multiplicand (A) to the partial product
-// 3. Shift the multiplicand left by one position (A << 1)
-//    -> This aligns it for the next binary weight
-// 4. Shift the multiplier right by one position (B >> 1)
-//    -> To examine the next bit in the next cycle
-// 5. Repeat this for 16 clock cycles
-//
-// WHY IT WORKS
-// -------------------------------------------------------
-// Binary multiplication is like decimal multiplication:
-//
-// Example in decimal:
-//   45 × 23 =
-//     45 × 3 (units place)
-//   + 45 × 2 (tens place)
-//
-// Same in binary:
-//   Each bit of the multiplier represents a power of 2
-//   So we add shifted versions of the multiplicand
-//
-// HARDWARE BEHAVIOR
-// -------------------------------------------------------
-// - A 4-bit or 5-bit counter runs from 0 to 15
-// - Accumulator register stores sum
-// - Shifting creates the multiplication alignment
-// - Result builds over 16 cycles
-//
-// ADVANTAGES
-// -------------------------------------------------------
-// - Low hardware cost
-// - Needs fewer adders than parallel multiplier
-// - Good for low-power / small chip area design
-//
-// LIMITATION
-// -------------------------------------------------------
-// - Slower than parallel multipliers since it takes 16 clock cycles
-//
-// END RESULT
-// -------------------------------------------------------
-// After 16 clock cycles, we get a correct 32-bit product output
-// representing A × B using the shift-and-add method.
-
 
 <h2><b>Design Methodology</b></h2>
 
